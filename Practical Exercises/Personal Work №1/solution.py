@@ -9,6 +9,15 @@
 # 673619719 - 136799761
 # 324155423 - 234515432
 # 324951935432399 - 233459919954332
+# 8912820199110 - 1012899982101
+
+def findDifferenceBetweenLists(first_list: list, second_list: list):
+    difference = set()
+    for item in first_list:
+        if first_list.count(item) > second_list.count(item) or first_list.count(item) < second_list.count(item):
+            difference.add(item)
+    return difference
+
 
 def makePalindromeComparisonLists(number):
     numbers_list = [i for i in str(number)]
@@ -41,19 +50,18 @@ def makeMinPossiblePalindrome(number):
     if not canBePalindrome(number):
         return "Cant make palindrome at all"
     comparison_lists = makePalindromeComparisonLists(number)
-    first_in_numbers = comparison_lists[0]
-    second_in_numbers = comparison_lists[1]
+    first_in_numbers = sorted(comparison_lists[0])
+    second_in_numbers = sorted(comparison_lists[1], reverse=True)
+    if '0' in first_in_numbers:
+        first_in_numbers[0], first_in_numbers[1] = first_in_numbers[1], first_in_numbers[0]
+        second_in_numbers[-1], second_in_numbers[-2] = second_in_numbers[-2], second_in_numbers[-1]
     middle_element = ""
     if len(first_in_numbers) == len(second_in_numbers):
         return "".join(first_in_numbers + second_in_numbers)
-    elif len(first_in_numbers) > len(second_in_numbers):
-        middle_element = str(set(first_in_numbers).difference(second_in_numbers)).strip("{}")
-    elif len(first_in_numbers) < len(second_in_numbers):
-        middle_element = str(set(second_in_numbers).difference(first_in_numbers)).strip("{}")
-    first_in_numbers.remove(middle_element[1])
-    first_in_numbers.sort()
-    second_in_numbers.sort(reverse=True)
-    return "".join(first_in_numbers + list(middle_element[1]) + second_in_numbers)
+    elif len(first_in_numbers) > len(second_in_numbers) or len(first_in_numbers) < len(second_in_numbers):
+        middle_element = str(findDifferenceBetweenLists(first_in_numbers, second_in_numbers)).strip("{''}")
+    first_in_numbers.remove(middle_element)
+    return "".join(first_in_numbers + list(middle_element) + second_in_numbers)
 
 
-print(makeMinPossiblePalindrome(8912821991))
+print(makeMinPossiblePalindrome(8912820199110))
