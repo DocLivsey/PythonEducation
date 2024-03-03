@@ -12,10 +12,12 @@
 # 8912820199110 - 1012899982101
 
 def findDifferenceBetweenLists(first_list: list, second_list: list):
-    difference = set()
+    difference = []
     for item in first_list:
         if first_list.count(item) > second_list.count(item) or first_list.count(item) < second_list.count(item):
-            difference.add(item)
+            difference.append(item)
+            first_list.remove(item)
+            second_list.remove(item)
     return difference
 
 
@@ -59,7 +61,7 @@ def makeMinPossiblePalindrome(number):
     if len(first_in_numbers) == len(second_in_numbers):
         return "".join(first_in_numbers + second_in_numbers)
     elif len(first_in_numbers) > len(second_in_numbers) or len(first_in_numbers) < len(second_in_numbers):
-        middle_element = str(findDifferenceBetweenLists(first_in_numbers, second_in_numbers)).strip("{''}")
+        middle_element = str(findDifferenceBetweenLists(first_in_numbers, second_in_numbers)).strip("['']")
     first_in_numbers.remove(middle_element)
     return "".join(first_in_numbers + list(middle_element) + second_in_numbers)
 
