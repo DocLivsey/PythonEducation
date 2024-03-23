@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d0bb93b4-72a0-4634-bcc3-024ee371cb07" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/antoherSolution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seventh Lesson/fifth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seventh Lesson/first_and_second.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seventh Lesson/fourth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seventh Lesson/sixth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seventh Lesson/third.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Sixth Lesson/fifth.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Sixth Lesson/fourth.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Sixth Lesson/second.py" afterDir="false" />
@@ -9,7 +19,11 @@
       <change afterPath="$PROJECT_DIR$/../Sixth Lesson/third.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/PythonEducation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/PythonEducation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Practical Exercises.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Practical Exercises.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Fifth Lesson/Class Practrice/fifth.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Fifth Lesson/Class Practrice/fifth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/solution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Third Lesson/Class Practice/sixth.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Third Lesson/Class Practice/sixth.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,12 +31,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2dpGH28crCbs9K8CDFLL4yGO5zL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,6 +55,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -46,10 +71,16 @@
       <option name="presentableId" value="Default" />
       <updated>1710697514876</updated>
       <workItem from="1710697525965" duration="31000" />
+      <workItem from="1710751224739" duration="172000" />
+      <workItem from="1710764336003" duration="918000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Personal_Work_2$antoherSolution.coverage" NAME="antoherSolution Coverage Results" MODIFIED="1710772580597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Personal_Work_2$solution.coverage" NAME="solution Coverage Results" MODIFIED="1710751256575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

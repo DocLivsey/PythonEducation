@@ -15,3 +15,14 @@ N = int(input("input count = "))
 mapa = {}
 for i in range(N):
     words_pair = input("input country and cities: ").split(" ")
+    mapa[words_pair[1]] = words_pair[0]
+input_s: str = input("input city name: ")
+cities = []
+while "end" not in input_s:
+    cities.append(input_s)
+    input_s = input("input city name: ")
+for city in cities:
+    if city in mapa.keys():
+        print(mapa[city])
+    else:
+        print("there is no city named: ", city)
