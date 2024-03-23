@@ -10,12 +10,12 @@ with open("text.txt") as input_file:
             words_mapa[word] = 1
         else:
             words_mapa[word] += 1
-    sortedByValue = sorted(words_mapa.items(), key=lambda x: x[1])
+    sortedByValue = sorted(words_mapa.items(), key=lambda x: -x[1])
     max_value = sortedByValue[len(sortedByValue) - 1][1]
     filteredByValues = []
     for i in range(max_value):
-        listByI = list(filter(lambda x: x[1] == i + 1, sortedByValue))
-        filteredByValues.append(listByI)
+        listByValueI = list(filter(lambda x: x[1] == i + 1, sortedByValue))
+        filteredByValues.append(listByValueI)
     sortedByKey = []
     for filteredList in filteredByValues:
         filteredList.sort(key=lambda x: x[0])
