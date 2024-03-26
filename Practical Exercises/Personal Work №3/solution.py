@@ -21,12 +21,10 @@ with open("input.txt") as input_file:
     pairs = {}
     for i in range(2, len(pupils) + 1, 2):
         for j in range(len(pupils) - i + 1):
-            print(f"{pupils[j:i+j]}, i = {i}, j = {j}")
-            print(f"a = {pupils[j:i+j].count('a')}, b = {pupils[j:i+j].count('b')}")
             if pupils[j:i+j].count('a') == pupils[j:i+j].count('b'):
                 if pupils[j:i+j] not in pairs.keys():
                     pairs[pupils[j:i+j]] = 1
                 else:
                     pairs[pupils[j:i + j]] += 1
-    print(pairs)
     print(sum(pairs.values()))
+input_file.close()

@@ -1,2 +1,2 @@
-8
-abbababa
+3
+aba
