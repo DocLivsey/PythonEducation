@@ -37,7 +37,7 @@ class CatDog(object):
     _dogs_part: float
 
     @validate_input
-    def __int__(self, cats_part, dogs_part):
+    def __init__(self, cats_part, dogs_part):
         self._cats_part = float(cats_part)
         self._dogs_part = float(dogs_part)
 
@@ -68,13 +68,23 @@ class CatDog(object):
 
 
 class CosmoCatDog(CatDog):
-    def __init__(self, galaxy):
-        CatDog.__init__(self)
+    def __init__(self, cats_part, dogs_part, galaxy):
+        CatDog.__init__(self, cats_part, dogs_part)
         self._galaxy = galaxy
 
+    def __str__(self):
+        return (f"cat - {self._cats_part / (self._dogs_part + self._cats_part) * 100}%, "
+                f"dog - {self._dogs_part / (self._dogs_part + self._cats_part) * 100}%, "
+                f"galaxy - {self._galaxy}")
 
-c = CatDog()
-c.__int__(12, 13)
-print(c)
+    def get_galaxy(self):
+        return self._galaxy
+
+
+c = CatDog(12, 13)
+print(c, c.get_parts())
 c.eat("meat", 100)
-print(c)
+print(c, c.get_parts())
+
+cosmo_c = CosmoCatDog(12, 13, "milky way")
+print(cosmo_c, c.get_parts())
