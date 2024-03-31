@@ -81,10 +81,12 @@ class CosmoCatDog(CatDog):
         return self._galaxy
 
 
-c = CatDog(12, 13)
-print(c, c.get_parts())
+c = CatDog(15, 13)
+print(c, c.get_parts(), c.climb_tree())
+c.bark()
 c.eat("meat", 100)
-print(c, c.get_parts())
+print(c, c.get_parts(), c.climb_tree())
+c.bark()
 
 cosmo_c = CosmoCatDog(12, 13, "milky way")
-print(cosmo_c, c.get_parts())
+print(cosmo_c, cosmo_c.get_parts(), cosmo_c.climb_tree())
