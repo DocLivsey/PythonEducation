@@ -21,6 +21,8 @@
 
 def validate_input(func):
     def wrapper(*args, **kwargs):
+        if len(args) < 2:
+            return func(*args, **kwargs)
         if type(args[1]) is int or type(args[1]) is float:
             if args[1] < 0 or args[1] > 100:
                 raise ValueError("Нельзя превысить значение 100 или уменьшиться ниже 0")
