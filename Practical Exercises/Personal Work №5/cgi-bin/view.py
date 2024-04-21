@@ -7,9 +7,9 @@ passport = form.getfirst("Passport", "не задано")
 
 print("Content-type: text/html\n")
 print("""<!DOCTYPE HTML>
-        <html>
+        <html lang="en">
         <head>
-            <meta charset="cp1251">
+            <meta charset="UTF-8">
             <title>Обработка Клиентов </title> 
         </head>
         <body>""")
