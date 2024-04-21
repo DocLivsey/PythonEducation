@@ -5,9 +5,9 @@ text1 = form.getfirst("FirstName", "не задано")
 text2 = form.getfirst("SurName", "не задано")
 print("Content-type: text/html\n")
 print("""<!DOCTYPE HTML>
-        <html>
+        <html lang="en">
         <head>
-            <meta charset="cp1251">
+            <meta charset="UTF-8">
             <title>Обработка книг </title> 
         </head>
         <body>""")
