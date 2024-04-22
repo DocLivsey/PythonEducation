@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<table>
+	<record>
+		<contract_number>3478384034</contract_number>
+		<client_id>6</client_id>
+		<object_id>4</object_id>
+		<contract_date>2024-04-05</contract_date>
+		<insurance_payment>1200.0</insurance_payment>
+	</record>
+	<record>
+		<contract_number>24923803483</contract_number>
+		<client_id>0</client_id>
+		<object_id>2</object_id>
+		<contract_date>2020-07-22</contract_date>
+		<insurance_payment>1047394.23</insurance_payment>
+	</record>
+	<record>
+		<contract_number>74393471801</contract_number>
+		<client_id>0</client_id>
+		<object_id>3</object_id>
+		<contract_date>2013-01-01</contract_date>
+		<insurance_payment>102030.0</insurance_payment>
+	</record>
+	<record>
+		<contract_number>120393471801</contract_number>
+		<client_id>2</client_id>
+		<object_id>1</object_id>
+		<contract_date>2001-12-01</contract_date>
+		<insurance_payment>234901.011</insurance_payment>
+	</record>
+	<record>
+		<contract_number>1203984310483</contract_number>
+		<client_id>5</client_id>
+		<object_id>0</object_id>
+		<contract_date>2020-10-28</contract_date>
+		<insurance_payment>75934.9</insurance_payment>
+	</record>
+</table>
