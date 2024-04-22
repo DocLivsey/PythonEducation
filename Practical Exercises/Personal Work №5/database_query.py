@@ -13,7 +13,7 @@ def log_decorator(func):
 @log_decorator
 def select_from_database_all_clients():
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM clients")
+    cursor.execute("SELECT * FROM Clients")
     for row in cursor.fetchall():
         print(row)
 
