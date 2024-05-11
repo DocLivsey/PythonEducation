@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Order New Insurance</title>
+</head>
+<body>
+  <header>
+		<h1>Take out new insurance</h1>
+	</header>
+
+  <main>
+		<div>
+			<form action="/insurance/{{ client.id }}/order_insurance/" method="post">
+				{% csrf_token %}
+				<fieldset>
+					<legend><h2>Insurance Form</h2></legend>
+					{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+					{% for choice in question.choice_set.all %}
+        	<input type="text" name="{{}}" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+        	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    			{% endfor %}
+				</fieldset>
+			</form>
+		</div>
+	</main>
+</body>
+</html>
