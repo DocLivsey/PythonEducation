@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contract Detail</title>
+</head>
+<body>
+	<header>
+		<div>
+			<h2>{{client.first_name}} {{client.last_name}}`s Contracts details</h2>
+		</div>
+	</header>
+	<main>
+		<div>
+			{% for detail in details %}
+			<div>
+				<h3>Номер контракта: {{detail.id}}</h3>
+				<ul>
+					<li>
+						<div>
+							<p>Идентификатор клиента: {{detail.client_id.id}}</p>
+							<p>ФИО клиента: {{detail.client_id.first_name}} {{detail.client_id.last_name}}</p>
+							<p>Почта клиента: {{detail.client_id.email}}</p>
+							<p>Паспорт клиента: {{detail.client_id.passport}}</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<p>Код застрахованного объекта: {{detail.object_id.id}}</p>
+							<p>Название застрахованного объекта: {{detail.object_id.object_name}}</p>
+							<p>Описание застрахованного объекта: {{detail.object_id.description}} </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			{% endfor %}
+		</div>
+	</main>
+</body>
+</html>
