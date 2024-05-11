@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Personal Cabinet</title>
+</head>
+<body>
+	<header>
+		<div>
+			<h1>That`s your personal cabinet</h1>
+		</div>
+	</header>
+	<main>
+		<div>
+			<h2>Ваши личные данные <a style="font-size: medium; font-weight: normal">(Изменить)</a></h2>
+			<div>
+				<p>ID: {{client.id}}</p>
+				<p>ФИО: {{client.first_name}} {{client.last_name}}</p>
+				<p>ПОЧТА: {{client.email}}</p>
+				<p>
+					ПАСПОРТ<br>
+					Серия: {{series}}, Номер: {{number}}
+				</p>
+			</div>
+		</div>
+		<div>
+			<h2>Ваши контракты</h2>
+			{% if contracts %}
+			<ul>
+				{% for contract in contracts %}
+				<li>
+					<div>
+						<h3><a href="/insurance/{{ client.id }}/contract_details/">Номер контракта: {{contract.id}}</a></h3>
+						<p>Номер застрахованного объекта: {{contract.object_id_id}}</p>
+						<p>Дата страхования: {{contract.contract_date}}</p>
+						<p>Страховая выплата: {{contract.insurance_payment}}</p>
+					</div>
+				</li>
+    		{% endfor %}
+			</ul>
+			{% else %}
+    		<p>No contracts are available.</p>
+			{% endif %}
+		</div>
+	</main>
+</body>
+</html>
