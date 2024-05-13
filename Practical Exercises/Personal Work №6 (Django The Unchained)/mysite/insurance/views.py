@@ -1,21 +1,59 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.template import loader
 from .models import *
+from .forms import *
 
 
 def index(request):
-    print(request.user.id)
-    client = get_object_or_404(Clients, pk=request.user.id)
-    return render(request, "insurance/index.html", {"client": client})
+    if request.user.is_authenticated:
+        client = get_object_or_404(Clients, pk=request.user.id)
+        return render(request, "insurance/index.html", {"client": client, "show_cabinet": True})
+    else:
+        return render(request, "insurance/login.html", {"show_cabinet": False})
 
 
 def login(request):
-    pass
+    try:
+        username = request.POST['username']
+        password = request.POST['password']
+    except KeyError:
+        return render(
+            request,
+            "insurance/login.html",
+            {
+                "error_message": "You didnt enter a valid username and password.",
+            },
+        )
+    else:
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request)
+                return HttpResponse('<h1>Authenticated successfully</h1>')
+            else:
+                return HttpResponse('<h1>Disabled account</h1>')
+        else:
+            return HttpResponse('<h1>Invalid login</h1>')
 
 
 def signup(request):
-    pass
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            if user is not None:
+                return HttpResponse("<h1>You are already registered</h1>")
+            else:
+                login(request, user)
+                return redirect("")
+    else:
+        form = SignUpForm()
+    return render(request, "insurance/signup.html", {'form': form})
 
 
 def clients_cabinet(request, id):
