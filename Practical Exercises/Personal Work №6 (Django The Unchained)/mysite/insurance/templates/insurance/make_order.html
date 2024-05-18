@@ -5,21 +5,25 @@
 	<title>Order New Insurance</title>
 </head>
 <body>
-  <header>
-		<h1>Take out new insurance</h1>
-	</header>
-
   <main>
 		<div>
-			<form action="/insurance/{{ client.id }}/order_insurance/" method="post">
-				{% csrf_token %}
+			<form method="post">
+    		{% csrf_token %}
 				<fieldset>
-					<legend><h2>Insurance Form</h2></legend>
-					{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-					{% for choice in question.choice_set.all %}
-        	<input type="text" name="{{}}" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-        	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
-    			{% endfor %}
+					<legend><h1>Take out new insurance</h1></legend>
+					{% for field in form %}
+					<p>
+						{{ field.label_tag }}<br>
+						{{ field }}
+						{% if field.help_text %}
+							<small style="color: grey">{{ field.help_text }}</small>
+						{% endif %}
+						{% for error in field.errors %}
+							<p style="color: red">{{ error }}</p>
+						{% endfor %}
+					</p>
+					{% endfor %}
+					<button type="submit">Order</button>
 				</fieldset>
 			</form>
 		</div>
