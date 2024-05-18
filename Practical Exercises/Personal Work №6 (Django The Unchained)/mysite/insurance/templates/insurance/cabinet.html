@@ -2,35 +2,43 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Personal Cabinet</title>
+	<title>{{client.first_name}} {{client.last_name}}`s cabinet</title>
 </head>
 <body>
 	<header>
-		<div>
+		<div style="display: flex; justify-content: space-between">
 			<h1>That`s your personal cabinet</h1>
+			<a style="font-size: 1rem" href="/insurance/">GO TO HOME PAGE</a>
 		</div>
 	</header>
 	<main>
 		<div>
-			<h2>Ваши личные данные <a style="font-size: medium; font-weight: normal">(Изменить)</a></h2>
+			<h2>Ваши личные данные <a href="/insurance/{{client.id}}/change_personal_data/" style="font-size: medium; font-weight: normal">(Изменить)</a></h2>
 			<div>
 				<p>ID: {{client.id}}</p>
 				<p>ФИО: {{client.first_name}} {{client.last_name}}</p>
 				<p>ПОЧТА: {{client.email}}</p>
 				<p>
 					ПАСПОРТ<br>
+					{% if define_passport %}
 					Серия: {{series}}, Номер: {{number}}
+					{% else %}
+					Не задано
+					{% endif %}
 				</p>
 			</div>
 		</div>
 		<div>
-			<h2>Ваши контракты</h2>
+			<h2>Ваши контракты
+				<a href="/insurance/{{client.id}}/make_order/" style="font-size: medium; font-weight: normal">(Добавить новый)</a>
+				<a href="/insurance/{{ client.id }}/contract_details/" style="font-size: medium; font-weight: normal"> (Детали контрактов)</a>
+			</h2>
 			{% if contracts %}
 			<ul>
 				{% for contract in contracts %}
 				<li>
 					<div>
-						<h3><a href="/insurance/{{ client.id }}/contract_details/">Номер контракта: {{contract.id}}</a></h3>
+						<h3>Номер контракта: {{contract.id}}</h3>
 						<p>Номер застрахованного объекта: {{contract.object_id_id}}</p>
 						<p>Дата страхования: {{contract.contract_date}}</p>
 						<p>Страховая выплата: {{contract.insurance_payment}}</p>
