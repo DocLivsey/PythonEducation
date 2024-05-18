@@ -8,23 +8,13 @@
 	<main>
 		<div>
 			<form method="post">
-				{% csrf_token %}
+        {% csrf_token %}
 				<fieldset>
 					<legend><h1>Log In</h1></legend>
-					{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-					<label style="font-weight: bolder; font-size: 1em">
-						USERNAME
-						<input name="username" id="username" placeholder="enter username" type="text"
-						style="font-style: italic; font-size: 1em">
-					</label>
-					<label style="font-weight: bolder; font-size: 1em">
-						PASSWORD
-						<input name="password" id="password" placeholder="enter password" type="password"
-						style="font-style: italic; font-size: 1em">
-					</label>
-					<button type="submit" style="font-size: 1em; font-weight: bold">LOG IN</button>
+        	{{ form.as_p }}
+        	<p><input type="submit" value="Log In"></p>
 				</fieldset>
-			</form>
+    	</form>
 		</div>
 	</main>
 </body>
