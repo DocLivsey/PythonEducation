@@ -6,18 +6,126 @@
 </head>
 <body>
 	<header>
-		<div>
-			<h1>
+		<div style="display: flex; justify-content: space-between; margin-bottom: 1em; border-bottom: solid">
+			<h1 style="display: inherit; margin-top: 0;">
 				Insurance Company`s main page
 			</h1>
+			<div style="display: inherit; flex-direction: column-reverse; justify-content: flex-end;">
+				{% if show_cabinet %}
+				<div style="display: flex">
+					<a href="/insurance/{{ client.id }}/">
+						<button style="font-style: italic; font-size: 1em">Personal Cabinet</button>
+					</a>
+				</div>
+				{% endif %}
+				<div style="display: inherit; flex-direction: row; justify-content: flex-end;
+				 margin-bottom: 1ex; font-weight: bold">
+					{% if logged_in %}
+					<div>
+						<a href="/insurance/logout/">Log Out</a>
+					</div>
+					{% else %}
+					<div>
+						<a href="/insurance/signup/">sign up</a>
+					</div>
+					/
+					<div>
+						<a href="/insurance/login/">log in</a>
+					</div>
+					{% endif %}
+				</div>
+			</div>
 		</div>
 	</header>
 
 	<main>
 		<div>
-			<a href="/insurance/{{ client.id }}/">
-				<button style="font-style: italic; font-size: 1em">Open My Personal Cabinet</button>
-			</a>
+			<h2 style="font-weight: normal; font-style: italic; padding: 0; margin: 0 13em">ABOUT US</h2>
+			<div style="border-top: groove; padding: 0; margin: 0 20em;">
+				<h3 style="font-weight: normal">Requisites</h3>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">Full name of the organization</p>
+					<p>LIMITED LIABILITY COMPANY "INSURANCE AGENCY <strong>"ABSOLUTE"</strong></p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">Address</p>
+					<p>Moscow, st. Mostovaya, 6/1</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">Authorized capital</p>
+					<p>1000$</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">OKFS</p>
+					<p>Private property</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">OKOPF</p>
+					<p>Limited Liability Companies</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">OKOGU</p>
+					<p>Organizations established by legal entities or citizens, or legal entities and citizens jointly</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">TIN</p>
+					<p>522460310</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">OGRN</p>
+					<p>1248431583958</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">KPP</p>
+					<p>292852355</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">OKATO</p>
+					<p>The city of Moscow is the capital of the Russian Federation, a city of federal significance, North-West, Pokrovskoye-Streshnevo</p>
+				</div>
+			</div>
+
+			<div style="border-top: groove; padding: 0; margin: 0 20em;">
+				<h3 style="font-weight: normal">Contacts</h3>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">Telephone</p>
+					<p>+7(900)-010-01-10</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">Address</p>
+					<p>Moscow, st. Mostovaya, 6/1</p>
+				</div>
+			</div>
+
+			<div style="border-top: groove; padding: 0; margin: 0 20em;">
+				<h3 style="font-weight: normal">Information about the company</h3>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">Supervisor</p>
+					<p>Gorbachev Anton Victorovich, General Director"</p>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<p style="margin-right: 2em; color: grey">Number of staff</p>
+					<p>1632</p>
+				</div>
+			</div>
+
+			<div style="border-top: groove; padding: 0; margin: 0 20em;">
+				<h3 style="font-weight: normal">Description</h3>
+				<div>
+					<p>
+						Company ABSOLUTE INSURANCE AGENCY LLC, address: Moscow, st. Mostovaya, 6 k. 1 registered 01/05/2024.
+						The organization was assigned TIN 522460310, OGRN 1248431583958, KPP 292852355. The main activity is the
+						activity of insurance agents and brokers, a total of 7 types of activity are registered under OKVED.
+						There are no connections with other companies.
+						Number of co-owners (according to the Unified State Register of Legal Entities): 1, general director -
+						Gorbachev Anton Victorovich. The amount of authorized capital is 1,000 dollars.
+						ABSOLUTE INSURANCE AGENCY LLC did not take part in the tenders. There are no enforcement proceedings against
+						the company. ABSOLUTE INSURANCE AGENCY LLC did not participate in arbitration cases.
+						Details of ABSOLUTE INSURANCE AGENCY LLC, legal address, official website and Unified State Register of
+						Legal Entities extract are available in the SPARK system (demo access is free).
+					</p>
+				</div>
+			</div>
 		</div>
 	</main>
 </body>
