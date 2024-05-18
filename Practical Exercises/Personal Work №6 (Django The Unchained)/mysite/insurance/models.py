@@ -5,7 +5,7 @@ class Clients(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    passport = models.CharField(max_length=10, unique=True)
+    passport = models.CharField(max_length=10, null=True)
 
     def __str__(self):
         return (f'[ name:{self.first_name} {self.last_name}, '
@@ -14,7 +14,7 @@ class Clients(models.Model):
 
 
 class InsuranceObject(models.Model):
-    object_name = models.CharField(max_length=100)
+    object_name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
 
     def __str__(self):
