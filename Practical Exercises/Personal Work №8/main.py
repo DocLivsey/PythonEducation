@@ -8,9 +8,9 @@ import re
 
 '''
 left_down = tuple(map(lambda coordinate: float(coordinate),
-                      input('enter separated by commas left down border of map - ').split(',')))
+                      input('enter separated by comma left down border of map - ').split(',')))
 right_up = tuple(map(lambda coordinate: float(coordinate),
-                     input('enter separated by commas right up border of map - ').split(',')))
+                     input('enter separated by comma right up border of map - ').split(',')))
 lat_left = left_down[0]
 lon_left = left_down[1]
 

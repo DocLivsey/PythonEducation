@@ -55,3 +55,6 @@ for row in data_from_second_csv:
 
 for men in people:
     print(men)
+
+first_csv.close()
+second_csv.close()
